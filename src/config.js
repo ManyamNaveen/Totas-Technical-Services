@@ -2,12 +2,12 @@
 export const business = {
   name: 'TOTAS Technical Services',
   shortName: 'TOTAS',
-  nameAr: 'ØªÙˆØªØ§Ø³ Ù„Ù„Ø®Ø¯Ù…Ø§Øª Ø§Ù„ÙÙ†ÙŠØ©',
+  nameAr: 'توتاس للخدمات الفنية',
   licenseNo: '929464',
   licensedSince: 2021,
-  phone: '+971 56 718 1531',
-  phoneRaw: '971567181531',
-  // Temporary test number; switch back to 971567181531 before launch.
+  // Temporary test number for phone and WhatsApp; switch back to +971 56 718 1531 (971567181531) before launch.
+  phone: '+91 7285 964 923',
+  phoneRaw: '917285964923',
   whatsappRaw: '917285964923',
   address: 'Office 2102, Building 69B, Business Bay, Dubai, UAE',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Business+Bay+Dubai',
@@ -33,6 +33,7 @@ export const services = [
     icon: 'Droplets',
     image: '/images/pool-maintenance.jpg',
     text: 'Scheduled cleaning, water testing and chemical balancing that keeps your pool clear and safe in the Dubai heat.',
+    tags: ['Cleaning', 'Water Testing', 'Chemical Balance'],
   },
   {
     id: 'pool-installation',
@@ -41,6 +42,7 @@ export const services = [
     icon: 'Waves',
     image: '/images/pool-installation.jpg',
     text: 'New swimming pool installation for villas and buildings, including pool plumbing, tiling and finishing.',
+    tags: ['New Pools', 'Pool Plumbing', 'Pool Tiling'],
   },
   {
     id: 'ac',
@@ -49,6 +51,7 @@ export const services = [
     icon: 'Wind',
     image: '/images/ac.jpg',
     text: 'Installation and maintenance of air-conditioning, ventilation and air filtration systems for homes and offices.',
+    tags: ['Installation', 'Servicing', 'Air Filtration'],
   },
   {
     id: 'plumbing',
@@ -57,6 +60,7 @@ export const services = [
     icon: 'Wrench',
     image: '/images/plumbing.jpg',
     text: 'Pipework, fixtures, leak repairs and complete sanitary installations for kitchens and bathrooms.',
+    tags: ['Leak Repairs', 'Fixtures', 'Sanitary'],
   },
   {
     id: 'parking',
@@ -65,6 +69,7 @@ export const services = [
     icon: 'Car',
     image: '/images/parking.jpg',
     text: 'Installation and maintenance of automated car parking systems for residential and commercial buildings.',
+    tags: ['Installation', 'Maintenance'],
   },
   {
     id: 'tiling',
@@ -73,6 +78,7 @@ export const services = [
     icon: 'Grid3x3',
     image: '/images/tiling.jpg',
     text: 'Precise tiling for floors, walls, bathrooms and pool surrounds, with clean lines and durable finishes.',
+    tags: ['Floors', 'Walls', 'Pool Surrounds'],
   },
   {
     id: 'painting',
@@ -81,6 +87,7 @@ export const services = [
     icon: 'PaintRoller',
     image: '/images/painting.jpg',
     text: 'Interior and exterior painting with careful preparation, protection of your space and a neat finish.',
+    tags: ['Interior', 'Exterior'],
   },
   {
     id: 'carpentry',
@@ -89,6 +96,7 @@ export const services = [
     icon: 'Hammer',
     image: '/images/carpentry.jpg',
     text: 'Carpentry works and wood flooring installation, measured and fitted properly to your space.',
+    tags: ['Carpentry', 'Wood Flooring'],
   },
   {
     id: 'ceiling',
@@ -97,6 +105,7 @@ export const services = [
     icon: 'Layers',
     image: '/images/ceiling.jpg',
     text: 'False ceiling and light partition installation to divide rooms and give spaces a clean, finished look.',
+    tags: ['False Ceilings', 'Partitions'],
   },
   {
     id: 'plaster',
@@ -105,11 +114,15 @@ export const services = [
     icon: 'BrickWall',
     image: '/images/plaster.jpg',
     text: 'Internal and external plastering, wall repairs and surface preparation ready for painting.',
+    tags: ['Internal', 'External', 'Wall Repairs'],
   },
 ];
 
 export const areas = [
-  'Business Bay', 'Downtown Dubai', 'Dubai Marina', 'JBR', 'Palm Jumeirah', 'Jumeirah',
-  'Emirates Hills', 'Dubai Hills', 'Arabian Ranches', 'DAMAC Hills', 'JVC', 'Al Barsha',
-  'Mirdif', 'DIFC', 'Al Quoz', 'Motor City',
+  'Emirates Hills', 'Palm Jumeirah', 'Dubai Hills Estate', 'Arabian Ranches', 'Jumeirah',
+  'The Springs & Meadows', 'Al Barsha', 'Umm Suqeim', 'Arabian Ranches 2', 'Arabian Ranches 3',
+  'The Lakes', 'DAMAC Hills', 'DAMAC Hills 2', 'Jumeirah Golf Estates', 'Al Barari', 'The Villa',
+  'Palm Jebel Ali', 'District One (MBR City)', 'Jumeirah Park', 'Jumeirah Islands',
+  'Tilal Al Ghaf', 'Emaar South', 'The Valley', 'Wadi Al Safa', 'Jumeirah Village Circle (JVC)',
+  'Al Khawaneej', 'Mirdif', 'Business Bay', 'Dubai Marina', 'Motor City',
 ];

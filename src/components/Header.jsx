@@ -4,9 +4,10 @@ import { business } from '../config';
 
 const links = [
   { href: '#services', label: 'Services' },
-  { href: '#pools', label: 'Pools' },
+  { href: '#our-work', label: 'Our work' },
   { href: '#why-us', label: 'Why us' },
   { href: '#process', label: 'How it works' },
+  { href: '#areas', label: 'Areas' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -15,7 +16,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    // Hidden over the landing hero, which carries its own branding; slides in once scrolled past it.
+    const onScroll = () => setScrolled(window.scrollY > 360);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -29,7 +31,7 @@ export default function Header() {
   // become the menu's containing block and collapse its fixed full-screen panel.
   return (
     <>
-      <header className={`header ${scrolled || open ? 'header--solid' : ''}`}>
+      <header className={`header ${scrolled || open ? 'header--solid' : 'header--hidden'}`}>
         <div className="container header__inner">
           <a href="#top" className="brand" aria-label={`${business.name} home`}>
             <span className="brand__text">

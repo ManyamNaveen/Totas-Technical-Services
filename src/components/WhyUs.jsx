@@ -1,41 +1,44 @@
-import { CalendarDays, Sun, Heart, ShieldCheck } from 'lucide-react';
+import { Droplets, Sun, Wrench, ShieldCheck } from 'lucide-react';
 
 const reasons = [
   {
-    icon: CalendarDays,
-    title: 'Serving Dubai since 2021',
-    text: 'A local technical services team for homes, villas and buildings across Dubai.',
+    icon: Droplets,
+    tone: 'aqua',
+    title: 'Pool Specialists First',
+    text: 'Water testing, chemical balancing and equipment care that keep your pool clear, healthy and safe all year.',
   },
   {
     icon: Sun,
-    title: 'Dubai climate specialists',
-    text: 'We understand how heat and dust affect pools, air-conditioning and property systems.',
+    tone: 'amber',
+    title: 'Built for Dubai’s Climate',
+    text: 'We know how heat, sand and dust affect pools, air-conditioning and property systems, and plan our work around it.',
   },
   {
-    icon: Heart,
-    title: 'Customer-focused service',
-    text: 'We protect your home, clean up after ourselves and finish what we start.',
+    icon: Wrench,
+    tone: 'green',
+    title: 'One Team for Every Trade',
+    text: 'Pools, AC, plumbing, tiling, painting and carpentry handled by one contractor, so you never chase several.',
   },
   {
     icon: ShieldCheck,
-    title: 'Fully licensed',
-    text: 'Registered with Dubai Department of Economy & Tourism for every service we offer.',
+    tone: 'navy',
+    title: 'Licensed & Transparent',
+    text: 'Registered with Dubai Department of Economy & Tourism, with the price and timeline agreed before work begins.',
   },
 ];
 
 export default function WhyUs() {
   return (
-    <section className="section" id="why-us">
+    <section className="section why" id="why-us">
       <div className="container">
         <div className="section__head reveal">
           <span className="eyebrow">Why choose us</span>
-          <h2>Why Choose TOTAS?</h2>
-          <span className="why-us__underline" aria-hidden="true" />
+          <h2>Why Dubai Homeowners Choose TOTAS</h2>
         </div>
         <div className="reasons">
-          {reasons.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="reason">
-              <span className="reason__icon"><Icon size={26} /></span>
+          {reasons.map(({ icon: Icon, tone, title, text }) => (
+            <div key={title} className="reason reveal">
+              <span className={`reason__icon reason__icon--${tone}`}><Icon size={24} /></span>
               <h3>{title}</h3>
               <p>{text}</p>
             </div>

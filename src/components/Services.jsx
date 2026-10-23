@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { services, categories, whatsappLink } from '../config';
 
 export default function Services() {
@@ -42,13 +42,17 @@ export default function Services() {
                 <div className="service-card__body">
                   <h3>{s.title}</h3>
                   <p>{s.text}</p>
+                  <ul className="service-card__tags">
+                    {s.tags.map((t) => <li key={t}>{t}</li>)}
+                  </ul>
+                  <p className="service-card__price">Pricing <strong>Quoted after site assessment</strong></p>
                   <a
-                    href={whatsappLink(`Hi TOTAS, I'd like to know more about ${s.title}.`)}
+                    href={whatsappLink(`Hi TOTAS, I'd like a quote for ${s.title}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="service-card__link"
                   >
-                    Ask about this <ArrowUpRight size={16} />
+                    Get a quote <ArrowRight size={16} />
                   </a>
                 </div>
               </article>

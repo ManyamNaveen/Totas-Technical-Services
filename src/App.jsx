@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
+import Landing from './components/Landing';
 import Services from './components/Services';
-import Pools from './components/Pools';
+import BeforeAfter from './components/BeforeAfter';
 import WhyUs from './components/WhyUs';
 import Process from './components/Process';
+import WhereWeWork from './components/WhereWeWork';
+import QuoteForm from './components/QuoteForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -39,12 +40,13 @@ export default function App() {
       <a href="#main" className="skip-link">Skip to content</a>
       <Header />
       <main id="main">
-        <Hero />
-        <Stats />
+        <Landing />
         <Services />
-        <Pools />
+        <BeforeAfter />
         <WhyUs />
         <Process />
+        <WhereWeWork />
+        <QuoteForm />
         <Contact />
       </main>
       <Footer />

@@ -1,12 +1,12 @@
-import { ShieldCheck, Wrench, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
+﻿import { ShieldCheck, Home, Building2, MapPin, ArrowRight } from 'lucide-react';
 import { business, whatsappLink } from '../config';
 import { WhatsAppIcon } from './Icons';
 
 const highlights = [
-  'Pool cleaning & maintenance',
-  'Swimming pool installation',
-  'AC, ventilation & plumbing',
-  'Tiling, painting & carpentry',
+  { icon: Home, label: 'Homes & villas' },
+  { icon: Building2, label: 'Commercial properties' },
+  { icon: ShieldCheck, label: 'Serving since 2021' },
+  { icon: MapPin, label: 'Across Dubai' },
 ];
 
 export default function Hero() {
@@ -15,42 +15,31 @@ export default function Hero() {
       <div className="hero__bg" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__content">
-          <span className="eyebrow eyebrow--light">
+          <span className="eyebrow">
             <ShieldCheck size={16} />
-            <span className="hide-mobile">Licensed by Dubai Economy &amp; Tourism</span>
-            <span className="show-mobile">Licensed by Dubai DET</span>
+            Dubai DET licensed | {business.shortName} Technical Services
           </span>
           <h1>
-            Pools, maintenance &amp; finishing works, <span className="text-accent">handled by one trusted team.</span>
+            Swimming Pool Maintenance <span className="text-accent">&amp; Cleaning Services</span>
           </h1>
           <p className="hero__lead">
-            {business.name} keeps Dubai villas, homes and buildings running, from crystal-clear pools to
-            cool air, sound plumbing and beautiful finishes.
+            Keep your pool clean, safe and ready to enjoy. Our Dubai team also handles pool installation,
+            air-conditioning, plumbing and finishing works.
           </p>
           <div className="hero__ctas">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn btn--whatsapp btn--lg">
               <WhatsAppIcon /> Chat on WhatsApp
             </a>
-            <a href="#services" className="btn btn--light btn--lg">
+            <a href="#services" className="btn btn--primary btn--lg">
               Explore Our Services <ArrowRight size={18} />
             </a>
           </div>
-          <ul className="hero__trust">
-            <li><ShieldCheck size={18} /> DET licence no. {business.licenseNo}</li>
-            <li><Wrench size={18} /> 10 trades, one contractor</li>
-            <li><MapPin size={18} /> Serving all of Dubai</li>
-          </ul>
-        </div>
-
-        <aside className="hero__card" aria-label="Popular services">
-          <p className="hero__card-title">What we do best</p>
-          <ul>
-            {highlights.map((h) => (
-              <li key={h}><CheckCircle2 size={18} /> {h}</li>
+          <ul className="hero__trust" aria-label="Service highlights">
+            {highlights.map(({ icon: Icon, label }) => (
+              <li key={label}><Icon size={19} /> {label}</li>
             ))}
           </ul>
-          <a href="#services" className="hero__card-link">See all 10 services <ArrowRight size={16} /></a>
-        </aside>
+        </div>
       </div>
     </section>
   );
