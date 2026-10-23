@@ -1,64 +1,52 @@
-import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { services, categories, whatsappLink } from '../config';
+import { whatsappLink } from '../config';
+import { activePoolServiceGroups } from '../poolServices';
 
 export default function Services() {
-  const [active, setActive] = useState('all');
-  const visible = active === 'all' ? services : services.filter((s) => s.category === active);
-
   return (
     <section className="section" id="services">
       <div className="container">
         <div className="section__head reveal">
           <span className="eyebrow">Our services</span>
-          <h2>Everything your property needs, under one licence</h2>
+          <h2>Complete swimming pool services</h2>
           <p>
-            One reliable team for pools, AC, plumbing and finishing works, so you don't have to coordinate
-            several contractors.
+            Cleaning, water care, technical repairs, construction, renovation and poolside finishing for homes and businesses.
           </p>
         </div>
 
-        <div className="tabs reveal" role="tablist" aria-label="Filter services">
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              role="tab"
-              aria-selected={active === c.id}
-              className={`tab ${active === c.id ? 'tab--active' : ''}`}
-              onClick={() => setActive(c.id)}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="services__grid">
-          {visible.map((s) => {
-            return (
-              <article key={s.id} className="service-card">
-                <div className="service-card__media">
-                  <img src={s.image} alt="" loading="lazy" width="900" height="600" />
-                </div>
-                <div className="service-card__body">
-                  <h3>{s.title}</h3>
-                  <p>{s.text}</p>
-                  <ul className="service-card__tags">
-                    {s.tags.map((t) => <li key={t}>{t}</li>)}
-                  </ul>
-                  <p className="service-card__price">Pricing <strong>Quoted after site assessment</strong></p>
-                  <a
-                    href={whatsappLink(`Hi TOTAS, I'd like a quote for ${s.title}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="service-card__link"
-                  >
-                    Get a quote <ArrowRight size={16} />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+        {activePoolServiceGroups.map((group) => (
+          <section className={`service-group service-group--${group.services.length}`} key={group.id} aria-labelledby={`service-group-${group.id}`}>
+            <h3 className="service-group__title" id={`service-group-${group.id}`}>{group.title}</h3>
+            <div className="services__grid">
+              {group.services.map((s) => (
+                <article key={s.id} className="service-card">
+                  <div className="service-card__media">
+                    <img src={s.image} alt={s.title} loading="lazy" width="900" height="600" />
+                  </div>
+                  <div className="service-card__body">
+                    <h4>{s.title}</h4>
+                    <p>{s.text}</p>
+                    <ul className="service-card__details">
+                      {s.details.map((detail) => <li key={detail}>{detail}</li>)}
+                    </ul>
+                    <ul className="service-card__tags">
+                      {s.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                    </ul>
+                    <p className="service-card__price">Pricing <strong>Quoted after site assessment</strong></p>
+                    <a
+                      href={whatsappLink(`Hi TOTAS, I'd like a quote for ${s.title}.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="service-card__link"
+                    >
+                      Get a quote <ArrowRight size={16} />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </section>
   );

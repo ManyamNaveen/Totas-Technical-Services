@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { business, whatsappLink } from '../config';
 import { WhatsAppIcon } from './Icons';
 
@@ -18,6 +18,9 @@ export default function Contact() {
           <a href="#quote" className="btn btn--light btn--lg">Get a Free Quote</a>
           <a href={`tel:+${business.phoneRaw}`} className="btn btn--ghost btn--lg">
             <Phone size={18} /> {business.phone}
+          </a>
+          <a href={`mailto:${business.email}`} className="btn btn--ghost btn--lg">
+            <Mail size={18} /> {business.email}
           </a>
         </div>
       </div>

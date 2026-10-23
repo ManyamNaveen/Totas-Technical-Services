@@ -1,0 +1,172 @@
+const poolImage = (name) => `/images/home/${name}`;
+
+export const activePoolServiceGroups = [
+  {
+    id: 'cleaning-maintenance',
+    title: 'Swimming pool cleaning and maintenance',
+    services: [
+      {
+        id: 'pool-cleaning',
+        title: 'Pool Cleaning',
+        text: 'Regular cleaning to keep swimming pools clear, fresh, and presentable.',
+        details: ['Remove leaves and floating debris', 'Brush pool walls, steps, and floor', 'Vacuum dirt and sediment', 'Empty skimmer and pump baskets'],
+        tags: ['Cleaning', 'Vacuuming', 'Skimming'],
+        image: poolImage('service-pool-cleaning.jpg'),
+      },
+      {
+        id: 'water-testing-balancing',
+        title: 'Water Testing and Chemical Balancing',
+        text: 'Test and balance pool water to help maintain suitable swimming conditions.',
+        details: ['Check pH and chlorine levels', 'Monitor water clarity', 'Adjust chemicals according to test results and product instructions', 'Maintain service records'],
+        tags: ['Water Testing', 'pH Balance', 'Chlorine'],
+        image: poolImage('service-water-treatment.jpg'),
+      },
+      {
+        id: 'routine-pool-maintenance',
+        title: 'Routine Pool Maintenance',
+        text: 'Scheduled maintenance for residential, villa, hotel, and commercial swimming pools.',
+        details: ['Inspect pool equipment', 'Check water circulation', 'Clean filters as required', 'Identify maintenance issues early'],
+        tags: ['Scheduled Visits', 'Equipment Checks', 'Filter Care'],
+        image: poolImage('service-routine-pool-maintenance.jpg'),
+      },
+    ],
+  },
+  {
+    id: 'equipment-technical',
+    title: 'Swimming pool equipment and technical works',
+    services: [
+      {
+        id: 'pool-pump-repair',
+        title: 'Pool Pump Repair and Replacement',
+        text: 'Inspect, service, and replace pool pumps to help maintain reliable water circulation.',
+        details: ['Pump troubleshooting', 'Motor and seal inspection', 'Pump installation and replacement', 'Circulation performance checks'],
+        tags: ['Pump Repair', 'Replacement', 'Circulation'],
+        image: poolImage('service-pool-pump-repair.jpg'),
+      },
+      {
+        id: 'pool-filter-servicing',
+        title: 'Pool Filter Servicing',
+        text: 'Filter maintenance to help improve water clarity and filtration performance.',
+        details: ['Sand and cartridge filter servicing', 'Backwashing where appropriate', 'Filter media replacement', 'Leak and pressure checks'],
+        tags: ['Filter Cleaning', 'Backwashing', 'Pressure Checks'],
+        image: poolImage('service-pool-filter-servicing.jpg'),
+      },
+      {
+        id: 'pool-plumbing-leak-repairs',
+        title: 'Pool Plumbing and Leak Repairs',
+        text: 'Inspect and repair pool pipes, valves, and plumbing connections.',
+        details: ['Pipe and valve repairs', 'Plumbing connection replacement', 'Leak investigation', 'Water circulation troubleshooting'],
+        tags: ['Plumbing', 'Leak Investigation', 'Valves'],
+        image: poolImage('service-pool-plumbing-repairs.jpg'),
+      },
+      {
+        id: 'pool-lighting-electrical',
+        title: 'Pool Lighting and Electrical Equipment',
+        text: 'Pool lighting and compatible equipment servicing by qualified personnel.',
+        details: ['Underwater light replacement', 'Lighting fault diagnosis', 'Timer and control checks', 'Electrical safety inspection'],
+        tags: ['Pool Lighting', 'Controls', 'Safety Checks'],
+        image: poolImage('service-pool-lighting.jpg'),
+      },
+    ],
+  },
+  {
+    id: 'construction-renovation-repairs',
+    title: 'Swimming pool construction, renovation and repairs',
+    services: [
+      {
+        id: 'pool-construction',
+        title: 'Swimming Pool Construction',
+        text: 'Pool construction and related technical works for new residential and commercial projects.',
+        details: ['Pool structure and civil works', 'Plumbing and filtration installation', 'Waterproofing preparation', 'Equipment installation and commissioning'],
+        tags: ['New Construction', 'Installation', 'Commissioning'],
+        image: poolImage('service-pool-construction.jpg'),
+      },
+      {
+        id: 'pool-renovation-refurbishment',
+        title: 'Pool Renovation and Refurbishment',
+        text: 'Upgrade older swimming pools with repairs and improvements to restore their appearance and function.',
+        details: ['Pool surface refurbishment', 'Tile replacement', 'Equipment upgrades', 'General repair and renovation works'],
+        tags: ['Renovation', 'Refurbishment', 'Upgrades'],
+        image: poolImage('service-pool-renovation.jpg'),
+      },
+      {
+        id: 'pool-tile-grout-repairs',
+        title: 'Pool Tile and Grout Repairs',
+        text: 'Repair damaged pool tiles and grout to improve the finish and help prevent water ingress.',
+        details: ['Broken tile replacement', 'Grout repair and renewal', 'Surface inspection', 'Tile finishing and cleaning'],
+        tags: ['Tile Repair', 'Grouting', 'Finishing'],
+        image: poolImage('service-pool-tile-repairs.jpg'),
+      },
+      {
+        id: 'pool-waterproofing',
+        title: 'Pool Waterproofing',
+        text: 'Waterproofing works to help protect pool structures against water leakage.',
+        details: ['Inspect suspected leak areas', 'Prepare pool surfaces', 'Apply suitable waterproofing systems', 'Conduct appropriate leak tests'],
+        tags: ['Waterproofing', 'Surface Preparation', 'Leak Tests'],
+        image: poolImage('service-pool-waterproofing.jpg'),
+      },
+    ],
+  },
+  {
+    id: 'additional-pool-services',
+    title: 'Additional swimming pool services',
+    services: [
+      {
+        id: 'pool-leak-detection',
+        title: 'Swimming Pool Leak Detection',
+        text: 'Investigate water loss and identify potential leaks in pool structures, pipes, fittings, and equipment.',
+        details: ['Inspect pool structures and fittings', 'Investigate pipework and equipment', 'Trace likely leak locations'],
+        tags: ['Leak Detection', 'Inspection', 'Diagnosis'],
+        image: poolImage('service-pool-leak-detection.jpg'),
+      },
+      {
+        id: 'pool-surface-repair-recoating',
+        title: 'Pool Surface Repair and Recoating',
+        text: 'Repair worn surfaces and renew suitable pool finishes to improve durability and appearance.',
+        details: ['Inspect worn or damaged finishes', 'Repair the pool surface', 'Apply a suitable new coating'],
+        tags: ['Surface Repair', 'Recoating', 'Refinishing'],
+        image: poolImage('service-pool-surface-repair.jpg'),
+      },
+      {
+        id: 'pool-heating-systems',
+        title: 'Pool Heating Systems',
+        text: 'Installation, inspection, and servicing of compatible pool heating equipment where required.',
+        details: ['Install compatible heating equipment', 'Inspect system operation', 'Service equipment as required'],
+        tags: ['Pool Heating', 'Installation', 'Servicing'],
+        image: poolImage('service-pool-heating.jpg'),
+      },
+      {
+        id: 'overflow-water-feature-maintenance',
+        title: 'Overflow Pool and Water Feature Maintenance',
+        text: 'Maintain overflow channels, balance tanks, fountains, and compatible water features.',
+        details: ['Clean and inspect overflow channels', 'Maintain balance tanks', 'Service fountains and water features'],
+        tags: ['Overflow Channels', 'Balance Tanks', 'Water Features'],
+        image: poolImage('service-overflow-feature-maintenance.jpg'),
+      },
+    ],
+  },
+  {
+    id: 'pool-deck-finishing',
+    title: 'Pool deck, surrounding area and finishing works',
+    services: [
+      {
+        id: 'pool-deck-surrounding-works',
+        title: 'Pool Deck and Surrounding Works',
+        text: 'Improve swimming pool surroundings with suitable outdoor finishes.',
+        details: ['Poolside tile and paving repairs', 'Non-slip surface installation', 'Deck joint and grout repairs', 'Poolside finishing works'],
+        tags: ['Pool Decks', 'Paving', 'Non-slip Finishes'],
+        image: poolImage('service-pool-deck-works.jpg'),
+      },
+      {
+        id: 'pool-accessories-general-repairs',
+        title: 'Pool Accessories and General Repairs',
+        text: 'Supply, install, and maintain compatible pool accessories and fittings.',
+        details: ['Ladders and handrails', 'Skimmers and return fittings', 'Pool covers and accessories', 'General pool maintenance repairs'],
+        tags: ['Accessories', 'Fittings', 'General Repairs'],
+        image: poolImage('service-pool-accessories.jpg'),
+      },
+    ],
+  },
+];
+
+export const activePoolServices = activePoolServiceGroups.flatMap((group) => group.services);

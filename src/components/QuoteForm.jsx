@@ -1,19 +1,9 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { business, services, whatsappLink } from '../config';
+import { business, whatsappLink } from '../config';
+import { activePoolServiceGroups, activePoolServices } from '../poolServices';
 
-const poolOptions = [
-  'Swimming pool cleaning',
-  'Regular pool maintenance',
-  'Water testing & balancing',
-  'Filtration & equipment repair',
-  'Pool repairs',
-  'New pool installation',
-  'Pool cover installation',
-];
-const otherOptions = services.filter((s) => s.category !== 'pools').map((s) => s.title);
-
-const empty = { name: '', phone: '', area: '', service: poolOptions[0], message: '' };
+const empty = { name: '', phone: '', area: '', service: activePoolServices[0].title, message: '' };
 
 function validate(v) {
   const e = {};
@@ -94,19 +84,18 @@ export default function QuoteForm() {
             <div className="field">
               <label htmlFor="quote-service">Service required</label>
               <select {...field('service')}>
-                <optgroup label="Swimming pools">
-                  {poolOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                </optgroup>
-                <optgroup label="Other services">
-                  {otherOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                  <option value="Other">Other / multiple services</option>
-                </optgroup>
+                {activePoolServiceGroups.map((group) => (
+                  <optgroup label={group.title} key={group.id}>
+                    {group.services.map((service) => <option key={service.id} value={service.title}>{service.title}</option>)}
+                  </optgroup>
+                ))}
+                <option value="Other / multiple pool services">Other / multiple pool services</option>
               </select>
             </div>
           </div>
           <div className="field">
-            <label htmlFor="quote-message">Tell us about your pool</label>
-            <textarea rows={3} placeholder="Pool type, size, and the service you need" {...field('message')} />
+            <label htmlFor="quote-message">Tell us about your project</label>
+            <textarea rows={3} placeholder="Pool type, size, location, or work required" {...field('message')} />
           </div>
 
           <button type="submit" className="btn btn--primary btn--lg btn--block">

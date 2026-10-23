@@ -1,5 +1,6 @@
-import { Phone, MapPin, ShieldCheck, ArrowRight } from 'lucide-react';
-import { business, services, areas, whatsappLink } from '../config';
+import { Phone, Mail, MapPin, ShieldCheck, ArrowRight } from 'lucide-react';
+import { business, areas, whatsappLink } from '../config';
+import { activePoolServices } from '../poolServices';
 import { WhatsAppIcon } from './Icons';
 
 const explore = [
@@ -26,12 +27,12 @@ export default function Footer() {
             </span>
           </a>
           <p>
-            Dubai pool specialists: maintenance, repairs and new pool installation, plus AC, plumbing and
-            finishing works for villas and buildings.
+            Dubai pool specialists offering maintenance, repairs, water care and new pool installation for villas and buildings.
           </p>
           <p className="footer__label">Talk to a pool specialist</p>
           <ul className="footer__contact">
             <li><Phone size={16} /><a href={`tel:+${business.phoneRaw}`}>{business.phone}</a></li>
+            <li><Mail size={16} /><a href={`mailto:${business.email}`}>{business.email}</a></li>
             <li><WhatsAppIcon size={16} /><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></li>
             <li><MapPin size={16} /><a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">{business.address}</a></li>
           </ul>
@@ -43,7 +44,7 @@ export default function Footer() {
         <div>
           <h4>Services</h4>
           <ul>
-            {services.map((s) => <li key={s.id}><a href="#services">{s.title}</a></li>)}
+            {activePoolServices.map((s) => <li key={s.id}><a href="#services">{s.title}</a></li>)}
           </ul>
         </div>
 

@@ -3,7 +3,7 @@ import { Menu, X, Phone } from 'lucide-react';
 import { business } from '../config';
 
 const links = [
-  { href: '#services', label: 'Services' },
+  { href: '#services', label: 'Our services' },
   { href: '#our-work', label: 'Our work' },
   { href: '#why-us', label: 'Why us' },
   { href: '#process', label: 'How it works' },

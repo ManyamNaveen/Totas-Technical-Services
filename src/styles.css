@@ -224,10 +224,13 @@ button { font: inherit; cursor: pointer; }
 .tab:hover { border-color: var(--aqua-500); color: var(--aqua-500); }
 .tab--active, .tab--active:hover { background: var(--navy-800); border-color: var(--navy-800); color: #fff; }
 
-/* Flex instead of grid so a short last row (e.g. 10 services in 3 columns) stays centered. */
-.services__grid { --cols: 3; --gap: 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
+#services > .container { max-width: 1440px; }
+.services__grid { --cols: 4; --gap: 24px; display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); gap: var(--gap); }
+.service-group--2 .services__grid { --cols: 2; }
+.service-group--3 .services__grid { --cols: 3; }
+.service-group--4 .services__grid { --cols: 4; }
 .service-card {
-  width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  min-width: 0;
   background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm);
   display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   animation: cardIn 0.45s ease both;
@@ -237,9 +240,13 @@ button { font: inherit; cursor: pointer; }
 .service-card__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--aqua-100); }
 .service-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 .service-card:hover .service-card__media img { transform: scale(1.06); }
+.service-group { margin-top: 48px; }
+.service-group__title { margin-bottom: 20px; color: var(--navy-800); font-size: 24px; font-weight: 800; }
 .service-card__body { padding: 24px 26px 24px; display: flex; flex-direction: column; flex: 1; }
-.service-card h3 { font-size: 20px; font-weight: 800; color: var(--navy-800); margin-bottom: 10px; }
+.service-card h4 { font-size: 20px; font-weight: 800; color: var(--navy-800); margin-bottom: 10px; }
 .service-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+.service-card__details { display: grid; gap: 5px; margin: 0 0 16px 18px; color: var(--muted); list-style: disc; }
+.service-card__details li { padding-left: 2px; font-size: 14px; line-height: 1.45; }
 .service-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .service-card__tags li {
   padding: 4px 12px; border-radius: 999px; background: var(--aqua-100); color: #0b7f99;
@@ -475,7 +482,7 @@ button { font: inherit; cursor: pointer; }
   .landing__types li:nth-child(3) { padding-left: 0; border-left: 0; }
   .nav, .header__phone { display: none; }
   .menu-toggle { display: inline-flex; }
-  .services__grid { --cols: 2; }
+  .services__grid, .service-group--2 .services__grid, .service-group--3 .services__grid, .service-group--4 .services__grid { --cols: 2; }
   .reasons { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand > p { max-width: none; }
@@ -534,7 +541,9 @@ button { font: inherit; cursor: pointer; }
   .landing__phones { flex-direction: column; gap: 2px; }
   .ba { aspect-ratio: 3 / 2; border-radius: 18px; }
   .ba__cta .btn { width: 100%; }
-  .services__grid { --cols: 1; }
+  .services__grid, .service-group--2 .services__grid, .service-group--3 .services__grid, .service-group--4 .services__grid { --cols: 1; }
+  .service-group { margin-top: 36px; }
+  .service-group__title { font-size: 21px; }
   .reasons { grid-template-columns: 1fr; }
   .where__areas { gap: 8px; }
   .where__areas li { padding: 7px 12px; font-size: 13px; }
