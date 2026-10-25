@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --navy-900: #071530;
   --navy-800: #0b1e3f;
   --navy-700: #13305f;
@@ -491,14 +491,14 @@ button { font: inherit; cursor: pointer; }
 
 @media (max-width: 860px) {
   .where { grid-template-columns: 1fr; gap: 40px; }
-  /* Banner sits behind the bottom of the hero and fades up into the sky colour under the text. */
+  /* Keep the desktop banner as the hero backdrop; the light fade keeps mobile copy readable. */
   .landing__photo {
-    top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 380px; aspect-ratio: auto;
-    background-position: 84% bottom;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 38%);
-    mask-image: linear-gradient(180deg, transparent 0, #000 38%);
+    inset: 0; width: auto; height: auto; aspect-ratio: auto;
+    background: linear-gradient(180deg, rgba(245, 250, 255, 0.96) 0%, rgba(245, 250, 255, 0.9) 34%, rgba(245, 250, 255, 0.36) 68%, rgba(245, 250, 255, 0.08) 100%), url('/images/home/hero-banner.jpg') 76% center / cover no-repeat;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
-  .landing__hero-inner { padding: 20px 16px 250px; }
+  .landing__hero-inner { padding: 20px 16px 170px; }
   .landing__types { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 10px; max-width: 520px; }
   .landing__types li, .landing__types li + li { padding: 0; border: 0; }
   .landing__grid { grid-template-columns: repeat(2, 1fr); }
@@ -520,21 +520,24 @@ button { font: inherit; cursor: pointer; }
   .landing h1 { font-size: 25px; }
   .landing__lead { font-size: 15.5px; margin-bottom: 22px; }
   .landing__lead br { display: none; }
-  .landing__photo { height: 300px; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 20%); mask-image: linear-gradient(180deg, transparent 0, #000 20%); }
-  .landing__hero-inner { padding-bottom: 270px; }
+  .landing__photo {
+    background-position: center, 76% center;
+  }
+  .landing__hero-inner { padding: 18px 16px 160px; }
   .landing__types li { font-size: 13.5px; }
   .landing__types .landing__badge { width: 42px; height: 42px; }
   .landing__heading span { font-size: 20px; }
   .landing__brand small { letter-spacing: 0.35em; }
   .landing__services { padding: 14px 16px 22px; }
   .landing__heading { gap: 12px; }
-  /* Compact two-column cards on phones so the 10 services are a short scroll, not ten full-width cards. */
-  .landing__grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .landing__card img, .landing__card--short img { height: auto; aspect-ratio: 4 / 3; }
-  .landing__card-body { padding: 10px 10px 12px; align-items: flex-start; }
-  .landing__card .landing__badge { display: none; }
-  .landing__card h3 { font-size: 13.5px; line-height: 1.3; }
-  .landing__card p { font-size: 12px; line-height: 1.4; }
+  /* Full-width horizontal cards keep each service image and description easy to read. */
+  .landing__grid { grid-template-columns: 1fr; gap: 12px; }
+  .landing__card { flex-direction: row; min-height: 112px; }
+  .landing__card img, .landing__card--short img { width: 36%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+  .landing__card-body { min-width: 0; padding: 12px; align-items: flex-start; gap: 8px; }
+  .landing__card .landing__badge { display: grid; width: 34px; height: 34px; }
+  .landing__card h3 { font-size: 14px; line-height: 1.3; }
+  .landing__card p { font-size: 12.5px; line-height: 1.45; }
   .landing__bar { padding: 22px 16px; }
   .landing__promises { grid-template-columns: 1fr; }
   .landing__contact { align-self: stretch; padding-right: 20px; }
@@ -560,7 +563,242 @@ button { font: inherit; cursor: pointer; }
   .wa-tab__icon { width: 30px; height: 30px; }
 }
 
+/* Keep the landing poster composition intact on narrow screens and scale it as one unit. */
+@media (max-width: 860px) {
+  .landing { width: 100%; max-width: 100%; container-type: inline-size; overflow: hidden; }
+  .landing__hero { min-height: 26.05cqw; }
+  .landing__photo {
+    top: 0; right: 0; bottom: auto; left: auto; width: 63.55cqw; height: 100%; aspect-ratio: auto;
+    background: url('/images/home/hero-banner.jpg') right 60% / cover no-repeat;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.7) 12%, #000 22%);
+    mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.7) 12%, #000 22%);
+  }
+  .landing__hero-inner { padding: 1.43cqw 1.04cqw 1.56cqw 2.2%; }
+  .landing__brand { gap: 0.65cqw; margin-bottom: 0.78cqw; }
+  .landing__brand img { width: 10.42cqw; }
+  .landing__brand strong { font-size: 2.47cqw; }
+  .landing__brand small { font-size: 1.43cqw; margin-top: 0.39cqw; letter-spacing: 0.5em; }
+  .landing h1 { font-size: 2.47cqw; margin-bottom: 0.78cqw; }
+  .landing__lead { font-size: 1.3cqw; margin-bottom: 1.56cqw; }
+  .landing__types { display: flex; flex-wrap: wrap; max-width: none; row-gap: 0.91cqw; }
+  .landing__types li, .landing__types li + li { gap: 0.65cqw; padding: 0 0.91cqw; border-left: 1px solid rgba(13, 47, 110, 0.25); font-size: 0.98cqw; }
+  .landing__types li:first-child { padding-left: 0; border-left: 0; }
+  .landing__types li:nth-child(3) { padding-left: 0.91cqw; border-left: 1px solid rgba(13, 47, 110, 0.25); }
+  .landing__types .landing__badge, .landing__badge { width: 3.39cqw; height: 3.39cqw; }
+  .landing__services { padding: 0.91cqw 1.6% 1.69cqw; }
+  .landing__heading { gap: 1.43cqw; margin-bottom: 1.04cqw; }
+  .landing__heading span { font-size: 2.28cqw; }
+  .landing__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.04cqw; }
+  .landing__card { flex-direction: column; min-height: 0; }
+  .landing__card img, .landing__card--short img { width: 100%; height: 12cqw; aspect-ratio: auto; }
+  .landing__card--short img { height: 9.5cqw; }
+  .landing__card-body { min-width: 0; align-items: center; gap: 0.75cqw; padding: 0.8cqw 0.7cqw 0.95cqw; }
+  .landing__card .landing__badge { display: grid; width: 3.2cqw; height: 3.2cqw; }
+  .landing__card h3 { font-size: 0.98cqw; line-height: 1.15; margin-bottom: 0.2cqw; }
+  .landing__card p { font-size: 0.88cqw; line-height: 1.35; }
+  .landing__bar { flex-direction: row; align-items: center; gap: 1.56cqw; padding: 0.91cqw 2.6%; }
+  .landing__promises { display: flex; flex-wrap: nowrap; }
+  .landing__promises li, .landing__promises li + li { gap: 0.91cqw; padding: 0.26cqw 1.43cqw; border: 0; font-size: 0.98cqw; }
+  .landing__promises li:first-child { padding-left: 0; }
+  .landing__promises li + li { border-left: 1px solid rgba(255, 255, 255, 0.4); }
+  .landing__promises li:last-child { border-right: 1px solid rgba(255, 255, 255, 0.4); }
+  .landing__ring { width: 3.25cqw; height: 3.25cqw; }
+  .landing__contact { align-self: auto; gap: 1.17cqw; padding: 0.78cqw 2.34cqw 0.78cqw 1.04cqw; }
+  .landing__contact-icon { width: 3.39cqw; height: 3.39cqw; }
+  .landing__badge svg, .landing__ring svg, .landing__contact-icon svg { width: 50%; height: 50%; }
+  .landing__contact strong { font-size: 1.17cqw; }
+  .landing__phones { flex-direction: row; gap: 0.78cqw; font-size: 0.98cqw; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
+}
+/* Reflow the pool poster cards into readable columns on phones. */
+@media (max-width: 640px) {
+  .landing__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .landing__card { flex-direction: column; min-height: 100%; }
+  .landing__card img, .landing__card--short img { width: 100%; height: auto; aspect-ratio: 1.45; object-fit: cover; }
+  .landing__card-body { flex-direction: row; align-items: flex-start; gap: 8px; padding: 10px; }
+  .landing__card .landing__badge { flex: 0 0 30px; width: 30px; height: 30px; }
+  .landing__card h3 { font-size: clamp(12px, 3.1cqw, 14px); line-height: 1.25; }
+  .landing__card p { font-size: clamp(11px, 2.7cqw, 12px); line-height: 1.4; }
+}
+/* Compact the mobile landing poster so all ten pool services fit in a short view. */
+@media (max-width: 640px) {
+  .landing__hero { min-height: 36cqw; }
+  .landing__hero-inner { padding-top: 1cqw; padding-bottom: 1cqw; }
+  .landing__brand { margin-bottom: 0.5cqw; }
+  .landing h1 { margin-bottom: 0.45cqw; }
+  .landing__lead { margin-bottom: 0.75cqw; }
+  .landing__services { padding: 0.65cqw 1.6% 1cqw; }
+  .landing__heading { margin-bottom: 0.75cqw; }
+  .landing__card img, .landing__card--short img { aspect-ratio: 2.2; }
+  .landing__card-body { gap: 5px; padding: 7px; }
+  .landing__card .landing__badge { flex-basis: 24px; width: 24px; height: 24px; }
+  .landing__card h3 { font-size: clamp(11px, 2.8cqw, 13px); line-height: 1.15; }
+  .landing__card p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; font-size: clamp(10px, 2.45cqw, 11px); line-height: 1.25; }
+  .landing__grid { gap: 7px; }
+  .landing__bar { padding: 1.2cqw 2.6%; }
+}
+/* Give the compact mobile hero copy clearer vertical rhythm. */
+@media (max-width: 640px) {
+  .landing__brand { margin-bottom: 2cqw; }
+  .landing h1 { margin-bottom: 1.4cqw; }
+  .landing__lead { margin-bottom: 1.8cqw; }
+  .landing__types { row-gap: 1.4cqw; }
+}
+/* Improve mobile legibility in the pool banner. */
+@media (max-width: 640px) {
+  .landing__brand img { width: clamp(42px, 12cqw, 68px); }
+  .landing__brand strong { font-size: clamp(14px, 3.4cqw, 19px); }
+  .landing__brand small { font-size: clamp(8px, 1.8cqw, 11px); }
+  .landing h1 { font-size: clamp(15px, 4cqw, 22px); line-height: 1.12; }
+  .landing__lead { max-width: 70%; font-size: clamp(11px, 2.7cqw, 14px); line-height: 1.3; }
+  .landing__lead br { display: block; }
+  .landing__types li { font-size: clamp(8px, 1.8cqw, 11px); }
+}
+/* Balance mobile brand and hero typography; reduce card image height. */
+@media (max-width: 860px) {
+  .landing__brand strong { font-size: clamp(17px, 3.1cqw, 23px); }
+  .landing__brand small { font-size: clamp(9px, 1.8cqw, 12px); }
+  .landing h1 { font-size: clamp(18px, 3.3cqw, 27px); line-height: 1.12; }
+  .landing__lead { font-size: clamp(12px, 2cqw, 16px); line-height: 1.35; }
+  .landing__types li { font-size: clamp(9px, 1.5cqw, 12px); }
+  .landing__types .landing__badge { width: clamp(24px, 5cqw, 36px); height: clamp(24px, 5cqw, 36px); }
+}
+@media (max-width: 640px) {
+  .landing__card img, .landing__card--short img { aspect-ratio: 2.8; }
+}
+
+/* Slightly shorten the mobile banner and soften only its main headline. */
+@media (max-width: 640px) {
+  .landing__hero { min-height: 33cqw; }
+  .landing__hero-inner { padding-top: 0.7cqw; padding-bottom: 0.7cqw; }
+}
+@media (max-width: 860px) {
+  .landing h1 { font-size: clamp(17px, 2.9cqw, 24px); }
+}
+/* Keep mobile banner copy clear of the technician and place audience items below it. */
+@media (max-width: 860px) {
+  .landing__photo { background-position: 20% center; }
+  .landing h1 { max-width: 65%; font-size: clamp(16px, 2.7cqw, 22px); }
+  .landing__lead { max-width: 58%; font-size: clamp(10.5px, 1.7cqw, 13px); line-height: 1.3; }
+  .landing__types { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 66%; gap: 4px 8px; }
+  .landing__types li { gap: 5px; font-size: clamp(8px, 1.35cqw, 10px); }
+  .landing__types .landing__badge { width: clamp(21px, 4.4cqw, 30px); height: clamp(21px, 4.4cqw, 30px); }
+}
+/* Fix mobile hero readability, keep the technician in frame, and tighten service rows. */
+@media (max-width: 860px) {
+  .landing__photo {
+    background-image: linear-gradient(90deg, rgba(234, 244, 252, 0.82), rgba(234, 244, 252, 0.12) 78%), url('/images/home/hero-banner.jpg');
+    background-position: center, 58% center;
+    background-size: cover, cover;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .landing__lead { max-width: 65%; font-size: clamp(12px, 2cqw, 14px); color: #1e3358; text-shadow: 0 1px 4px rgba(255,255,255,.95); }
+  .landing__types { max-width: 76%; }
+  .landing__types li { color: #0d2f6e; font-size: clamp(9px, 1.65cqw, 12px); text-shadow: 0 1px 4px rgba(255,255,255,.95); }
+  .landing__types .landing__badge { width: clamp(23px, 4.6cqw, 32px); height: clamp(23px, 4.6cqw, 32px); }
+}
+@media (max-width: 640px) {
+  .landing__card img, .landing__card--short img { aspect-ratio: 3.5; }
+  .landing__card-body { gap: 4px; padding: 5px; }
+  .landing__card .landing__badge { flex-basis: 21px; width: 21px; height: 21px; }
+  .landing__card h3 { font-size: clamp(10.5px, 2.5cqw, 12px); }
+  .landing__card p { font-size: clamp(9.5px, 2.2cqw, 10.5px); }
+}
+/* Keep the technician visible and separate the audience labels from the photo. */
+@media (max-width: 860px) {
+  .landing__photo { background-position: center, right center; }
+  .landing__types {
+    max-width: 78%; padding: 5px; border-radius: 10px;
+    background: rgba(245, 250, 255, 0.88);
+  }
+  .landing__types li { font-size: clamp(10px, 1.8cqw, 13px); text-shadow: none; }
+  .landing__types .landing__badge { width: clamp(22px, 4.4cqw, 30px); height: clamp(22px, 4.4cqw, 30px); }
+}
+@media (max-width: 640px) {
+  .landing__card img, .landing__card--short img { aspect-ratio: 4 / 1; }
+}
+/* Restore the banner photo, remove the audience panel, and center the brand on mobile. */
+@media (max-width: 860px) {
+  .landing__photo {
+    background-image: url('/images/home/hero-banner.jpg');
+    background-position: right center;
+    background-size: cover;
+  }
+  .landing__brand { justify-content: center; }
+  .landing__types { background: transparent; padding: 0; }
+  .landing__types li { text-shadow: 0 1px 4px rgba(255,255,255,.9); }
+}
+/* Full-width mobile banner photo and one aligned row of audience items. */
+@media (max-width: 860px) {
+  .landing__photo {
+    inset: 0;
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+    background-image: url('/images/home/hero-banner.jpg');
+    background-position: 82% center;
+    background-size: cover;
+  }
+  .landing__types {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+  }
+  .landing__types li {
+    min-width: 0;
+    gap: 5px;
+    padding: 0;
+    font-size: clamp(9px, 1.7cqw, 12px);
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(255,255,255,.9);
+  }
+  .landing__types .landing__badge {
+    flex: 0 0 clamp(22px, 4.2cqw, 30px);
+    width: clamp(22px, 4.2cqw, 30px);
+    height: clamp(22px, 4.2cqw, 30px);
+  }
+}
+/* Match the desktop banner composition and keep audience labels consistent on mobile. */
+@media (max-width: 860px) {
+  .landing__photo {
+    inset: 0 0 0 auto;
+    width: 72%;
+    height: 100%;
+    aspect-ratio: auto;
+    background-image: url('/images/home/hero-banner.jpg');
+    background-position: right center;
+    background-size: cover;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.65) 25%, #000 48%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.65) 25%, #000 48%);
+  }
+  .landing__types li { font-size: 12px; line-height: 1.2; }
+}
+/* Lock all four mobile audience labels to the same type size and equal columns. */
+@media (max-width: 860px) {
+  .landing__types { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .landing__types li { min-width: 0; font-size: 11px; }
+  .landing__types li > span:last-child {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 11px !important;
+    font-weight: 600;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+}
+/* Slightly reduce all mobile audience labels uniformly. */
+@media (max-width: 860px) {
+  .landing__types li,
+  .landing__types li > span:last-child { font-size: 10px !important; }
 }
