@@ -8,6 +8,8 @@ export const business = {
   // Business mobile number listed on the DET trade license.
   phone: '+971 56 718 1531',
   phoneRaw: '971567181531',
+  alternatePhone: '+971 50 785 5742',
+  alternatePhoneRaw: '971507855742',
   email: 'totastechnicalservices.123@gmail.com',
   whatsappRaw: '971567181531',
   address: 'Office 2102, Building 69B, Business Bay, Dubai, UAE',

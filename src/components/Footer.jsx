@@ -32,6 +32,7 @@ export default function Footer() {
           <p className="footer__label">Talk to a pool specialist</p>
           <ul className="footer__contact">
             <li><Phone size={16} /><a href={`tel:+${business.phoneRaw}`}>{business.phone}</a></li>
+            <li><Phone size={16} /><a href={`tel:+${business.alternatePhoneRaw}`}>{business.alternatePhone}</a></li>
             <li><Mail size={16} /><a href={`mailto:${business.email}`}>{business.email}</a></li>
             <li><WhatsAppIcon size={16} /><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></li>
             <li><MapPin size={16} /><a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">{business.address}</a></li>
