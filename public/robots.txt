@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://totas-technical-services.vercel.app/sitemap.xml
