@@ -1,15 +1,15 @@
-// Single source of truth for business details. Edit here, not in components.
+﻿// Single source of truth for business details. Edit here, not in components.
 export const business = {
   name: 'TOTAS Technical Services',
   shortName: 'TOTAS',
-  nameAr: 'توتاس للخدمات الفنية',
+  nameAr: 'ØªÙˆØªØ§Ø³ Ù„Ù„Ø®Ø¯Ù…Ø§Øª Ø§Ù„ÙÙ†ÙŠØ©',
   licenseNo: '929464',
   licensedSince: 2021,
-  // Temporary test number for phone and WhatsApp; switch back to +971 56 718 1531 (971567181531) before launch.
-  phone: '+91 7285 964 923',
-  phoneRaw: '917285964923',
+  // Business mobile number listed on the DET trade license.
+  phone: '+971 56 718 1531',
+  phoneRaw: '971567181531',
   email: 'totastechnicalservices.123@gmail.com',
-  whatsappRaw: '917285964923',
+  whatsappRaw: '971567181531',
   address: 'Office 2102, Building 69B, Business Bay, Dubai, UAE',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Business+Bay+Dubai',
 };
