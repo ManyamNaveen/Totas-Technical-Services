@@ -19,6 +19,9 @@ export default function Contact() {
           <a href={`tel:+${business.phoneRaw}`} className="btn btn--ghost btn--lg">
             <Phone size={18} /> {business.phone}
           </a>
+          <a href={`tel:+${business.alternatePhoneRaw}`} className="btn btn--ghost btn--lg">
+            <Phone size={18} /> {business.alternatePhone}
+          </a>
           <a href={`mailto:${business.email}`} className="btn btn--ghost btn--lg">
             <Mail size={18} /> {business.email}
           </a>
