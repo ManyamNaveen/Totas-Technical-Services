@@ -5,13 +5,13 @@ export const business = {
   nameAr: 'ØªÙˆØªØ§Ø³ Ù„Ù„Ø®Ø¯Ù…Ø§Øª Ø§Ù„ÙÙ†ÙŠØ©',
   licenseNo: '929464',
   licensedSince: 2021,
-  // Business mobile number listed on the DET trade license.
-  phone: '+971 56 718 1531',
-  phoneRaw: '971567181531',
-  alternatePhone: '+971 50 785 5742',
-  alternatePhoneRaw: '971507855742',
+  // Primary number shown in the navbar, home hero, contact section, and footer.
+  phone: '+971 50 785 5742',
+  phoneRaw: '971507855742',
+  alternatePhone: '+971 56 718 1531',
+  alternatePhoneRaw: '971567181531',
   email: 'totastechnicalservices.123@gmail.com',
-  whatsappRaw: '971567181531',
+  whatsappRaw: '971507855742',
   address: 'Office 2102, Building 69B, Business Bay, Dubai, UAE',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Business+Bay+Dubai',
 };

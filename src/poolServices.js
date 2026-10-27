@@ -12,6 +12,7 @@ export const activePoolServiceGroups = [
         details: ['Remove leaves and floating debris', 'Brush pool walls, steps, and floor', 'Vacuum dirt and sediment', 'Empty skimmer and pump baskets'],
         tags: ['Cleaning', 'Vacuuming', 'Skimming'],
         image: poolImage('service-pool-cleaning.jpg'),
+        webpImage: poolImage('service-pool-cleaning.webp'),
       },
       {
         id: 'water-testing-balancing',
@@ -20,6 +21,7 @@ export const activePoolServiceGroups = [
         details: ['Check pH and chlorine levels', 'Monitor water clarity', 'Adjust chemicals according to test results and product instructions', 'Maintain service records'],
         tags: ['Water Testing', 'pH Balance', 'Chlorine'],
         image: poolImage('service-water-treatment.jpg'),
+        webpImage: poolImage('service-water-treatment.webp'),
       },
       {
         id: 'routine-pool-maintenance',
@@ -28,6 +30,7 @@ export const activePoolServiceGroups = [
         details: ['Inspect pool equipment', 'Check water circulation', 'Clean filters as required', 'Identify maintenance issues early'],
         tags: ['Scheduled Visits', 'Equipment Checks', 'Filter Care'],
         image: poolImage('service-routine-pool-maintenance.jpg'),
+        webpImage: poolImage('service-routine-pool-maintenance.webp'),
       },
     ],
   },
@@ -42,6 +45,7 @@ export const activePoolServiceGroups = [
         details: ['Pump troubleshooting', 'Motor and seal inspection', 'Pump installation and replacement', 'Circulation performance checks'],
         tags: ['Pump Repair', 'Replacement', 'Circulation'],
         image: poolImage('service-pool-pump-repair.jpg'),
+        webpImage: poolImage('service-pool-pump-repair.webp'),
       },
       {
         id: 'pool-filter-servicing',
@@ -50,6 +54,7 @@ export const activePoolServiceGroups = [
         details: ['Sand and cartridge filter servicing', 'Backwashing where appropriate', 'Filter media replacement', 'Leak and pressure checks'],
         tags: ['Filter Cleaning', 'Backwashing', 'Pressure Checks'],
         image: poolImage('service-pool-filter-servicing.jpg'),
+        webpImage: poolImage('service-pool-filter-servicing.webp'),
       },
       {
         id: 'pool-plumbing-leak-repairs',
@@ -58,6 +63,7 @@ export const activePoolServiceGroups = [
         details: ['Pipe and valve repairs', 'Plumbing connection replacement', 'Leak investigation', 'Water circulation troubleshooting'],
         tags: ['Plumbing', 'Leak Investigation', 'Valves'],
         image: poolImage('service-pool-plumbing-repairs.jpg'),
+        webpImage: poolImage('service-pool-plumbing-repairs.webp'),
       },
       {
         id: 'pool-lighting-electrical',
@@ -66,6 +72,7 @@ export const activePoolServiceGroups = [
         details: ['Underwater light replacement', 'Lighting fault diagnosis', 'Timer and control checks', 'Electrical safety inspection'],
         tags: ['Pool Lighting', 'Controls', 'Safety Checks'],
         image: poolImage('service-pool-lighting.jpg'),
+        webpImage: poolImage('service-pool-lighting.webp'),
       },
     ],
   },
@@ -75,11 +82,12 @@ export const activePoolServiceGroups = [
     services: [
       {
         id: 'pool-construction',
-        title: 'Swimming Pool Construction',
-        text: 'Pool construction and related technical works for new residential and commercial projects.',
+        title: 'Swimming Pool Construction & Installation',
+        text: 'Swimming pool construction and installation for new residential and commercial projects in Dubai, including pool structures, plumbing, filtration systems, waterproofing, and equipment installation.',
         details: ['Pool structure and civil works', 'Plumbing and filtration installation', 'Waterproofing preparation', 'Equipment installation and commissioning'],
         tags: ['New Construction', 'Installation', 'Commissioning'],
         image: poolImage('service-pool-construction.jpg'),
+        webpImage: poolImage('service-pool-construction.webp'),
       },
       {
         id: 'pool-renovation-refurbishment',
@@ -88,6 +96,7 @@ export const activePoolServiceGroups = [
         details: ['Pool surface refurbishment', 'Tile replacement', 'Equipment upgrades', 'General repair and renovation works'],
         tags: ['Renovation', 'Refurbishment', 'Upgrades'],
         image: poolImage('service-pool-renovation.jpg'),
+        webpImage: poolImage('service-pool-renovation.webp'),
       },
       {
         id: 'pool-tile-grout-repairs',
@@ -96,6 +105,7 @@ export const activePoolServiceGroups = [
         details: ['Broken tile replacement', 'Grout repair and renewal', 'Surface inspection', 'Tile finishing and cleaning'],
         tags: ['Tile Repair', 'Grouting', 'Finishing'],
         image: poolImage('service-pool-tile-repairs.jpg'),
+        webpImage: poolImage('service-pool-tile-repairs.webp'),
       },
       {
         id: 'pool-waterproofing',
@@ -104,6 +114,7 @@ export const activePoolServiceGroups = [
         details: ['Inspect suspected leak areas', 'Prepare pool surfaces', 'Apply suitable waterproofing systems', 'Conduct appropriate leak tests'],
         tags: ['Waterproofing', 'Surface Preparation', 'Leak Tests'],
         image: poolImage('service-pool-waterproofing.jpg'),
+        webpImage: poolImage('service-pool-waterproofing.webp'),
       },
     ],
   },
@@ -118,6 +129,7 @@ export const activePoolServiceGroups = [
         details: ['Inspect pool structures and fittings', 'Investigate pipework and equipment', 'Trace likely leak locations'],
         tags: ['Leak Detection', 'Inspection', 'Diagnosis'],
         image: poolImage('service-pool-leak-detection.jpg'),
+        webpImage: poolImage('service-pool-leak-detection.webp'),
       },
       {
         id: 'pool-surface-repair-recoating',
@@ -126,6 +138,7 @@ export const activePoolServiceGroups = [
         details: ['Inspect worn or damaged finishes', 'Repair the pool surface', 'Apply a suitable new coating'],
         tags: ['Surface Repair', 'Recoating', 'Refinishing'],
         image: poolImage('service-pool-surface-repair.jpg'),
+        webpImage: poolImage('service-pool-surface-repair.webp'),
       },
       {
         id: 'pool-heating-systems',
@@ -134,6 +147,7 @@ export const activePoolServiceGroups = [
         details: ['Install compatible heating equipment', 'Inspect system operation', 'Service equipment as required'],
         tags: ['Pool Heating', 'Installation', 'Servicing'],
         image: poolImage('service-pool-heating.jpg'),
+        webpImage: poolImage('service-pool-heating.webp'),
       },
       {
         id: 'overflow-water-feature-maintenance',
@@ -142,6 +156,7 @@ export const activePoolServiceGroups = [
         details: ['Clean and inspect overflow channels', 'Maintain balance tanks', 'Service fountains and water features'],
         tags: ['Overflow Channels', 'Balance Tanks', 'Water Features'],
         image: poolImage('service-overflow-feature-maintenance.jpg'),
+        webpImage: poolImage('service-overflow-feature-maintenance.webp'),
       },
     ],
   },
@@ -156,6 +171,7 @@ export const activePoolServiceGroups = [
         details: ['Poolside tile and paving repairs', 'Non-slip surface installation', 'Deck joint and grout repairs', 'Poolside finishing works'],
         tags: ['Pool Decks', 'Paving', 'Non-slip Finishes'],
         image: poolImage('service-pool-deck-works.jpg'),
+        webpImage: poolImage('service-pool-deck-works.webp'),
       },
       {
         id: 'pool-accessories-general-repairs',
@@ -164,6 +180,7 @@ export const activePoolServiceGroups = [
         details: ['Ladders and handrails', 'Skimmers and return fittings', 'Pool covers and accessories', 'General pool maintenance repairs'],
         tags: ['Accessories', 'Fittings', 'General Repairs'],
         image: poolImage('service-pool-accessories.jpg'),
+        webpImage: poolImage('service-pool-accessories.webp'),
       },
     ],
   },

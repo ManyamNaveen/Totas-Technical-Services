@@ -65,7 +65,7 @@ export default function Landing() {
         <ul className="landing__grid">
           {poolServices.map(({ img, icon: Icon, title, text }, i) => (
             <li key={img} className={`landing__card ${i >= 5 ? 'landing__card--short' : ''}`}>
-              <img src={`/images/home/${img}.jpg`} alt={title} loading="lazy" />
+              <img src={`/images/home/${img}.jpg`} alt={({ 'Pool Cleaning': 'Technician skimming leaves from a swimming pool', 'Vacuuming': 'Technician vacuuming the floor of a swimming pool', 'Water Testing & Balancing': 'Gloved hand testing pool water with a color test kit', 'Filtration System Maintenance': 'Swimming pool filter tank, pump, and circulation pipes', 'Tile & Surface Cleaning': 'Robotic pool cleaner moving across a tiled pool floor', 'Equipment Inspection': 'Technician inspecting a pool equipment control panel', 'Water Quality Improvement': 'Clear water in a residential swimming pool', 'Pool Repairs': 'Pool technician carrying out maintenance beside a swimming pool', 'Pool Cover Installation': 'Rolled swimming pool cover beside the pool', 'All Types of Swimming Pool Works': 'Swimming pool at a landscaped villa' }[title] ?? title)} loading="lazy" />
               <div className="landing__card-body">
                 <span className="landing__badge"><Icon size={22} /></span>
                 <div>

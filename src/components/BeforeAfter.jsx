@@ -45,8 +45,8 @@ export default function BeforeAfter() {
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
         >
-          <img src={pair.after} alt={`${pair.alt} after TOTAS service`} className="ba__img" draggable="false" loading="lazy" />
-          <img src={pair.before} alt={`${pair.alt} before TOTAS service`} className="ba__img ba__img--before" draggable="false" loading="lazy" />
+          <img src={pair.after} alt="Clear swimming pool after cleaning" className="ba__img" draggable="false" loading="lazy" />
+          <img src={pair.before} alt="Leaf-covered green swimming pool before cleaning" className="ba__img ba__img--before" draggable="false" loading="lazy" />
           <span className="ba__tag ba__tag--before">Before</span>
           <span className="ba__tag ba__tag--after">After</span>
           <span className="ba__divider" aria-hidden="true">

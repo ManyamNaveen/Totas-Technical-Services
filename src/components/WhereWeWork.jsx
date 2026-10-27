@@ -24,7 +24,7 @@ export default function WhereWeWork() {
         </div>
 
         <div className="where__media reveal">
-          <img src="/images/hero.jpg" alt="Villa swimming pool in Dubai" loading="lazy" width="2000" height="1333" />
+          <img src="/images/hero.jpg" alt="Modern villa beside a swimming pool" loading="lazy" width="2000" height="1333" />
           <div className="where__badge">
             <MapPin size={26} />
             <span>
