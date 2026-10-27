@@ -9,6 +9,9 @@ const pair = {
   after: '/images/before-after/after.jpg',
   alt: 'Villa swimming pool',
 };
+const responsiveWebpSrcSet = (image) => [640, 960, 1440]
+  .map((width) => `${image.replace('.jpg', `-${width}.webp`)} ${width}w`)
+  .join(', ');
 
 export default function BeforeAfter() {
   const [pos, setPos] = useState(50);
@@ -45,8 +48,22 @@ export default function BeforeAfter() {
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
         >
-          <img src={pair.after} alt="Clear swimming pool after cleaning" className="ba__img" draggable="false" loading="lazy" />
-          <img src={pair.before} alt="Leaf-covered green swimming pool before cleaning" className="ba__img ba__img--before" draggable="false" loading="lazy" />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={responsiveWebpSrcSet(pair.after)}
+              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1128px) calc(100vw - 48px), 1080px"
+            />
+            <img src={pair.after} alt="Clear swimming pool after cleaning" className="ba__img" draggable="false" loading="lazy" />
+          </picture>
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={responsiveWebpSrcSet(pair.before)}
+              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1128px) calc(100vw - 48px), 1080px"
+            />
+            <img src={pair.before} alt="Leaf-covered green swimming pool before cleaning" className="ba__img ba__img--before" draggable="false" loading="lazy" />
+          </picture>
           <span className="ba__tag ba__tag--before">Before</span>
           <span className="ba__tag ba__tag--after">After</span>
           <span className="ba__divider" aria-hidden="true">
